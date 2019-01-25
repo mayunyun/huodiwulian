@@ -1,0 +1,144 @@
+
+#pragma mark - system api
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#pragma mark - encapsulation public
+#import "Command.h"
+#import "UIColor+BinAdd.h"
+#import "FFDropDownMenuView.h"
+#import "UUKeyboardInputView.h"
+#import "ProgressHUD.h"
+#import "AppUtility.h"
+#import "NetWorkManager.h"
+#import "NetWorkManagerTwo.h"
+#import "URLConstants.h"
+#import "FileCacheManager.h"
+#import "UIViewExt.h"
+#import "RequestTool.h"
+#import "SDCycleScrollView.h"//banner
+
+#import "BMChineseSort.h"
+#pragma mark - The three parties
+#import "MJRefresh.h"
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <Reachability/Reachability.h>
+#import <JSONModel/JSONModel.h>
+#import <Masonry/Masonry.h>
+#import "LYLDataBaseManager.h"
+
+#pragma mark - H file
+
+#import "Theme.h"
+#import "CommonDefine.h"
+#import "BasicConstants.h"
+
+#pragma mark - categories
+
+#import "NSString+Extension.h"
+#import "NSTimer+Extension.h"
+#import "NSDate+Extension.h"
+#import "NSArray+RemoveDuplicate.h"
+#import "NSMutableAttributedString+Extension.h"
+#import "NSDictionary+Extension.h"
+#import "NSObject+Release.h"
+#import "NSObject+Extension.h"
+#import "NSObject+NSCoding.h"
+#import "MJRefresh.h"
+#import "LxButton.h"
+
+#import "UIColor+Extension.h"
+#import "UIView+Rotate.h"
+#import "UINavigationBar+SetElement.h"
+#import "UIViewController+Extension.h"
+#import "UIButton+Extension.h"
+#import "UIImageView+GIF.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIDevice+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIImageView+Extension.h"
+#import "UIScrollView+Extension.h"
+#import "JXTAlertManagerHeader.h"
+#import "BRPickerView.h"
+#import <MAMapKit/MAMapKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+#import "SDAutoLayout.h"
+#import "SMAlert.h"
+#import "LoginVC.h"
+
+//
+#import "RequestTool1.h"
+#import "LoginVC1.h"
+#import "WuLiuSJRZViewControllerNew1.h"
+#import "WuLiuSjrzIngViewControllerNew1.h"
+#import "WSRedPacketView.h"
+#import "WSRewardConfig.h"
+#import "HongbaoDeViewController1.h"
+#import "BasicMainNC1.h"
+#import "BasicMainTBVC1.h"
+#import "BasicMainNC.h"
+#import "BasicMainTBVC.h"
+
+#import "DDCategory.h"
+#import "DDButton.h"
+#import "DDLabel.h"
+
+#import "ReplacePayPswVC.h"
+//项目常用颜色值
+#define WHITE_COLOR                 [UIColor whiteColor]                 //白色
+#define WORD_COLOR                  [UIColor colorWithHex:@"666666"]     //一般字体颜色
+#define RED_COLOR                   [UIColor colorWithHex:@"ff4c4b"]     //红色
+#define LINE_COLOR                  [UIColor colorWithHex:@"f5f5f5"]     //线条颜色
+
+#define Ver_Address    @"http://118.190.47.231"
+
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+
+//快捷赋值
+#define ImgName(imageName) [UIImage imageNamed:imageName]
+//
+#define kWeakSelf(type)__weak typeof(type)weak##type = type;
+#define kStrongSelf(type)__strong typeof(type)type = weak##type;
+// 状态栏(statusbar)
+#define statusbarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kIPhoneXBottomHeight ((kScreenHeight == 812)?34:0) //iPhoneX底部留出34距离
+#define WeakSelf(weakSelf)  __weak __typeof(self) weakSelf = self;
+
+#define IsHdsjOrHdhz @"isHdsjOrHdhz"
+
+#define IsIphone6P kScreenWidth==414
+#define IsIphone6 kScreenWidth==375
+#define IsIphone5S kScreenWidth==568
+
+#define  AliPay_APPID  @"2018022402261441"
+#define  PRIVATEKEY   @"MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCZ6xUj91M9ESuYcKcHSNbUE+A1SwnfHtJAeI4DRiRJp8Qv4B9zPhunrGglUHdo2+IOkr+U6zErkeUnRgo9L92X0fEqzyk+aMp76lG9YHPVriA8HestIWrq/hycUwe22ONcrEQ/WuPF7apgM9XSHSyiP9GZqFHYLW0+WMLmmEFpa/08J9WH429Bu07xtzwo90imiYhgJPvuk8KQGPZ7bVZsbcIVxHcsphlGm9MCXGEbazbWgPbC8AxTbxa1WLtGLbz74TJ4fWNaE+L9MjuVx4RmRL4ES+HE8BqzJfEbcekGKrwFVQ54C44cfQfrLbrR3+Hb4LprPDymDEitPTVgrtVxAgMBAAECggEAHy/JzcrMO+Bhw/Z3cXtpw/jvAf1dV68oDNYgeDtbGO18S/MOjEw2UEgXpg/i0gVTjX5ggS0SfnCGTOndIz6ymJN6WSE2iyWyeV8mBsgnUFGCyIuLXk6aGlk4tNgCBSN3Fgz1mxywcCdS0UFPfs5Yf9uMfaTkSHgT3YEgpJaPEmv1dmkFCDDt/8AONz6JQxl3Sbf4wHfGBybnjZ2gZSm6VKqfWmn+hZBkjHO4Mk2SNdRYaq4YB9XZ7groXaoTC6LfPeWqI3gsyjf9hhIFZVrHcEq2nI60CwA1l5TNMMag1652nl2bHIH2oEEoNn1IejlJDf6/1hKy/S32dHVquBUJ3QKBgQDUs2cuHeQRqW1rT36uaEA1vSExG7g/1vX/8XWASs5yvMwl7VcUjdS/OBRN9GZEwdmO+xjoA3m/CFkvQ0l033Q6ZcZ1KqKE8OKLiQW/nN/HV7FQKa0nnUjI23FT/MOUlIIetUf3dz0dpSzVbBmC1Izrt+D1OpR2dkHj7VHoJ4PptwKBgQC5QFBPLAl2wnclXicxeS15rqQ69Tfh9O937Ky3FergPzMa2x0Sbho96b2fRd+pHTxS9Ctpr6zdYiBnLJwcSH9ZWpzUm/wjenh3FrhXWuUQEa1DpeMYvcBosRU+BuAdTSOgDbWTRUNceFHnbrigfSU/JKOaTHbJQRqKpKlnc6naFwKBgBrgRGReYIgeyXWqyM4O3DYuHLiQ0Ro39kON5hP839M9qeoM8Fjnhv9WfbJP9HAxsmTPs5j1f3e0/Vfsf6al6ZDLdWUuqvRzX5zUBobsspYEraH8ciW0SRMgL1S2dpwam8p3i41oYq+RRHX/P8X5R4ktZd52tXW2gaLkRNo5zABHAoGAXBKwF7medo1O5J64QimlRY5ciAUrIj4361YRvenB1HT09IslFuzsVAthuNDkykwCmIRNM3kiJOJJkp4kdRY/XWzg9/cTSZrsVtxPAPPnV6ZBhJblmX1uLVqeYTbPmyCk7T8DGVBam5IduzZXw0SQB6MxQVZxz7Nw+qm+nPFq4T8CgYEAjVrrn6Giv3Wevbt12ZmtlQ89y9jpf4fmXOck7/gnmK9E/vTLyeHINuhvFR5Zmab7RgIE+GaWpYqrP/QRD8kWNrlpZNnMWB1aCXOZU4LMZfvknapxxJZPkI3iegycyqPTEZhjYrebc6iaEhplVegdOno7f+RaqzXlcZrKHKDmHbY="    //支付宝秘钥
+
+#define AliPayTrue @"AliPayTrue"
+
+
+
+
+
+#define WXPay_APPID @"wx2303e3c37663ae5c"
+#define WXPay_mch_id @"1503298331"
+#define WXPay_key @"hRky5X7gBIFJ5YquJKTH08NtK0fH2RQ4"
+#define kWeiXinAppSecret @"6bfd2033e0cadeec6541994c12653d50"
+#define WXPayTrue @"WXPayTrue"
+#define WXout_trade_no @"WXout_trade_no"
+
+//空值判断
+static inline BOOL IsEmptyValue(id thing) {
+    return thing == nil
+    || ([thing respondsToSelector:@selector(length)]
+        && [(NSData *)thing length] == 0)
+    || ([thing respondsToSelector:@selector(count)]
+        && [(NSArray *)thing count] == 0)
+    ||  ([thing isKindOfClass:[NSNull class]]);
+}
