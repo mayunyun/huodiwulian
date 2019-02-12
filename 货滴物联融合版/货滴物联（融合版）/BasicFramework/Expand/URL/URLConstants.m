@@ -13,10 +13,8 @@
  *  @param 开发环境
  */
 //NSString *const _Environment_Domain = @"http://www.maibat.com/maibate";
-NSString *const _Environment_Domain = @"http://www.huodiwuliu.com";//@"http://www.huodikuaiyun.com";
+NSString *const _Environment_Domain = @"跟地址";//@"http://www.huodikuaiyun.com";
 //NSString *const _Environment_Domain = @"http://192.168.1.55/hdsy";
-
-//http://www.huodiwulian.com
 //http://118.190.47.231:8004/hdsy
 //http://192.168.1.55/hdsy
 //NSString *const _Environment_Domain = @"http://192.168.1.236:8280/hdsy";

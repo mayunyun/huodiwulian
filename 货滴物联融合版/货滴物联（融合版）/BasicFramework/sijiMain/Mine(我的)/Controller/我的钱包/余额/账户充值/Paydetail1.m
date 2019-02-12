@@ -87,9 +87,9 @@ static NSString *kTextMessage = @"这是测试字段";
     
     NSString* baseurl = _Environment_Domain;
     if ([noticeID isEqualToString:@"0"]) {
-        order.notify_url = @"http://www.huodiwulian.com/zhifubaodingdanzhifu";
+        order.notify_url = @"跟地址/zhifubaodingdanzhifu";
     }else if ([noticeID isEqualToString:@"1"]){
-        order.notify_url = @"http://www.huodiwulian.com/getNotAction1";
+        order.notify_url = @"跟地址/getNotAction1";
     }else if ([noticeID isEqualToString:@"2"]){
         order.notify_url = [NSString stringWithFormat:@"%@/shipperAlipayPayServlet",baseurl];
     }
@@ -155,10 +155,10 @@ static NSString *kTextMessage = @"这是测试字段";
     {
         NSString* baseurl = _Environment_Domain;
         if ([noticeID isEqualToString:@"0"]) {
-            NSString* notifyurl = @"http://www.huodiwulian.com/mbtwz/weixinzhifujieguo";
+            NSString* notifyurl = @"跟地址/mbtwz/weixinzhifujieguo";
             [Paydetail1 prepayIdRequestname:name notifyurl:notifyurl outTradeno:orderId orderMoney:price];
         }else if ([noticeID isEqualToString:@"1"]){
-            NSString* notifyurl = @"http://www.huodiwulian.com/weixin/weixinnews";
+            NSString* notifyurl = @"跟地址/weixin/weixinnews";
             [Paydetail1 prepayIdRequestname:name notifyurl:notifyurl outTradeno:orderId orderMoney:price];
         }else if ([noticeID isEqualToString:@"2"]){
             NSString* notifyurl = @"http://www.maibat.com/maibate/shipperWeChat";

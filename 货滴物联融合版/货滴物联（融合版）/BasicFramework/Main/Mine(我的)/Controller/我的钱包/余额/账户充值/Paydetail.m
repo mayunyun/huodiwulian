@@ -87,11 +87,11 @@ static NSString *kTextMessage = @"这是测试字段";
     
     NSString* baseurl = _Environment_Domain;
     if ([noticeID isEqualToString:@"0"]) {
-        order.notify_url = @"http://www.huodiwulian.com/zhifubaodingdanzhifu";
+        order.notify_url = @"跟地址/zhifubaodingdanzhifu";
     }else if ([noticeID isEqualToString:@"1"]){
-        order.notify_url = @"http://www.huodiwulian.com/getNotAction1";
+        order.notify_url = @"跟地址/getNotAction1";
     }else if ([noticeID isEqualToString:@"2"]){
-        order.notify_url = @"http://www.huodiwulian.com/qianyuezhifubao";
+        order.notify_url = @"跟地址/qianyuezhifubao";
     }
     
     // NOTE: 当前时间点
@@ -155,13 +155,13 @@ static NSString *kTextMessage = @"这是测试字段";
     {
         NSString* baseurl = _Environment_Domain;
         if ([noticeID isEqualToString:@"0"]) {
-            NSString* notifyurl = @"http://www.huodiwulian.com/mbtwz/weixinzhifujieguo";
+            NSString* notifyurl = @"跟地址/mbtwz/weixinzhifujieguo";
             [Paydetail prepayIdRequestname:name notifyurl:notifyurl outTradeno:orderId orderMoney:price];
         }else if ([noticeID isEqualToString:@"1"]){
-            NSString* notifyurl = @"http://www.huodiwulian.com/weixin/weixinnews";
+            NSString* notifyurl = @"跟地址/weixin/weixinnews";
             [Paydetail prepayIdRequestname:name notifyurl:notifyurl outTradeno:orderId orderMoney:price];
         }else if ([noticeID isEqualToString:@"2"]){
-            NSString* notifyurl = @"http://www.huodiwulian.com/weixin/qianyueweixin";
+            NSString* notifyurl = @"跟地址/weixin/qianyueweixin";
             [Paydetail prepayIdRequestname:name notifyurl:notifyurl outTradeno:orderId orderMoney:price];
         }
         

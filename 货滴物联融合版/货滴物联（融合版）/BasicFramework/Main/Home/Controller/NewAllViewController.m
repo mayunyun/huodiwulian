@@ -169,9 +169,9 @@
     [image sd_setImageWithURL:[NSURL URLWithString:urlimage] placeholderImage:nil];
     [message setThumbImage:[UIImage imageNamed:@"LOGO.png"]];
     WXWebpageObject* webpage = [WXWebpageObject object];
-    NSString *urlStr = [NSString stringWithFormat:@"http://www.huodiwulian.com/hdsywz/page/xinwen/xinwenxiangqingm.html?id=%@&type=%d",_model.id,self.type];
+    NSString *urlStr = [NSString stringWithFormat:@"跟地址/hdsywz/page/xinwen/xinwenxiangqingm.html?id=%@&type=%d",_model.id,self.type];
     if (self.type == 2){
-        urlStr = [NSString stringWithFormat:@"http://www.huodiwulian.com/hdsywz/page/xinwen/xinwenxiangqingm.html?id=%@&type=%d",_huomodel.id,self.type];
+        urlStr = [NSString stringWithFormat:@"跟地址/hdsywz/page/xinwen/xinwenxiangqingm.html?id=%@&type=%d",_huomodel.id,self.type];
     }
     webpage.webpageUrl = urlStr;
     message.mediaObject = webpage;

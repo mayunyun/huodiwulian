@@ -120,10 +120,10 @@
     message.title = @"货滴物联";
     message.description = @"欢迎使用货滴物联，你身边的物流平台。";
     UIImageView *image = [[UIImageView alloc]init];
-    [image sd_setImageWithURL:[NSURL URLWithString:@"http://www.huodiwulian.com/logo_sj.png"] placeholderImage:nil];
+    [image sd_setImageWithURL:[NSURL URLWithString:@"跟地址/logo_sj.png"] placeholderImage:nil];
     [message setThumbImage:[UIImage imageNamed:@"LOGO.png"]];
     WXWebpageObject* webpage = [WXWebpageObject object];
-    webpage.webpageUrl = @"http://www.huodiwulian.com/hdsywz/weixin/page/xiazai.html";
+    webpage.webpageUrl = @"跟地址/hdsywz/weixin/page/xiazai.html";
     message.mediaObject = webpage;
     
     [[LSActionView1 sharedActionView] showWithImages:images titles:titles actionBlock:^(NSInteger index) {
